@@ -1,0 +1,225 @@
+/*
+ * jQuery FlexSlider v1.8
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/* Browser Resets */
+.flex-container a:active, .flexslider a:active {
+	outline: none;
+}
+.slides, .flex-control-nav, .flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.flexslider .slides > li {
+	display: none;
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {
+	max-width: 100%;
+	display: block;
+}
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+/* Clearfix for the .slides element */
+.slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+html[xmlns] .slides {
+	display: block;
+}
+* html .slides {
+	height: 1%;
+}
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+	display: block;
+}
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {
+	background: none;
+	border: none;
+	position: relative;
+	zoom: 1;
+	padding-bottom:110px
+}
+.flexslider .slides {
+	zoom: 1;
+}
+.flexslider .slides > li {
+	position: relative;
+}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {
+	zoom: 1;
+	position: relative;
+}
+/* Caption style */
+/* IE rgba() hack */
+
+
+/* Direction Nav */
+.flex-control-nav {
+	display:none
+}
+.flex-control-nav li a {
+	font-size:0;
+	line-height:0
+}
+.flex-direction-nav, .flex-control-nav {
+	position:absolute;
+}
+.flex-direction-nav {
+	position:absolute;
+	top:186px;
+	left:0;
+	width:100%;
+	overflow:hidden
+}
+.flex-direction-nav li a {
+	width: 33px;
+	height: 67px;
+	display: inline-block;
+	cursor: pointer;
+	text-indent: -9999px;
+}
+.flex-direction-nav li {
+	display:inline-block
+}
+.flex-direction-nav li {
+	float:right;
+}
+.flex-direction-nav li:first-child {
+	float:left;
+}
+.flex-direction-nav li .next {
+	background:url(../images/next.png) no-repeat 0 0;
+}
+.flex-direction-nav li .prev {
+	background:url(../images/prev.png) no-repeat 0 0;
+}
+.flex-direction-nav li .disabled {
+	opacity:.3;
+	filter:alpha(opacity=30);
+	cursor: default;
+}
+.flex-direction-nav li a:hover {
+	background-position:right 0
+}
+.flex-control-nav li a {
+	font-size:0;
+	line-height:0
+}
+.banner {
+	background:url(../images/bg-banner.png) no-repeat center 0;
+	position:absolute;
+	top:427px;
+	left:0;
+	text-align:center;
+	width:100%;
+	padding:24px 0 0 0
+}
+.border-1 {
+	background:url(../images/border-horiz.gif) repeat-x 0 8px;
+	text-align:center
+}
+.border-1 a {
+	line-height:16px;
+	font-size:11px;
+	text-transform:uppercase;
+	color:#c9a576;
+	font-weight:normal;letter-spacing:2px
+}
+.border-1 b {
+	padding: 0 12px;
+	background:#fff
+}
+.border-1 a:hover {
+	text-decoration:none;
+	color:#afafaf;
+}
+.banner span {
+	color:#3f3f3f;
+	text-transform:uppercase;
+	font-size:24px;
+	display:block;
+	font-weight:bold;
+	padding-bottom:5px
+}
+.banner span em {
+	color:#b89567;
+	text-transform:uppercase;
+	font-size:14px;
+	font-style:normal;
+	line-height:16px;
+	letter-spacing:1px;
+	padding-top:4px;
+	display:inline-block
+}
+.banner strong {
+	color:#3f3f3f;
+	font-size:24px;
+	line-height:26px;
+	font-weight:normal;
+	display:block;
+	letter-spacing:2px;
+	padding-bottom:4px
+}
+.banner i {
+	color:#3f3f3f;
+	font-size:13px;
+	line-height:16px;
+	font-style:normal;
+	display:block;
+	text-transform:uppercase;
+	font-weight:bold;
+	padding-bottom:16px;
+	letter-spacing:1px
+}
+ @media only screen and (min-width: 768px) and (max-width: 995px) {
+ .flexslider {
+padding-bottom: 120px;
+}
+ .banner {
+top: 340px;
+}
+ .flex-direction-nav {
+top: 142px;
+}
+}
+ @media only screen and (max-width: 767px) {
+ .flex-direction-nav {
+top:34px;
+}
+ .flexslider {
+ padding-bottom: 0;
+}
+ .banner {
+display:none
+}
+}
+ @media only screen and (min-width: 480px) and (max-width: 767px) {
+ .flex-direction-nav {
+ top: 68px;
+}
+}
